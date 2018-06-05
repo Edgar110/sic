@@ -1,0 +1,14 @@
+{
+	"hostA": "https://www.banamex.com/",
+	"hostB": "https://portal.banamex.uat1.citibankonlineqa.com/",
+	"urls": [
+		"index.html",
+		"resultados-de-busqueda.htm",
+		"simulador-hipotecario/index.html",
+		"simulador-hipotecario/tabla-amortizacion/generator.js",
+		"simulador-hipotecario/tabla-amortizacion/index.html",
+		"simulador-hipotecario/js/general.js",
+		"simulador-hipotecario/js/newsimulador.js",
+		"simulador-hipotecario/js/simulaAdd.js"
+	]
+}
