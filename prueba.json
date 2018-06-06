@@ -2,7 +2,6 @@
 	"hostA": "https://www.banamex.com/",
 	"hostB": "https://portal.banamex.uat1.citibankonlineqa.com/",
 	"urls": [
-		"index.html",
 		"resultados-de-busqueda.htm",
 		"simulador-hipotecario/index.html",
 		"simulador-hipotecario/tabla-amortizacion/generator.js",
