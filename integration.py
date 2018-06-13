@@ -1,4 +1,5 @@
 import json
+import git,os,shutil
 import urllib.request
 import time
 import os
@@ -12,19 +13,17 @@ def createFolder(directory):
     except OSError:
         print ('Error: Creating directory. ' +  directory)
 def files(url,):
-    t = x.split("/")
-    
-    #a_list = ["0","1","2"]
-
-    i = 0;
+    t = x.split("/") 
+    temp = ""
+    i = 0;    
     for folder in t:
-        if i != 0
-           cad = cad +"/"+ folder
-           i++
-        print (folder)        
-            
+        if folder.find(".") == -1:
+           temp = temp +"/"+ folder
+           i = i + 1   
     filename = t.pop()
-    return v[,filename]
+    v = []
+    v.append([filename,temp])
+    return v
     
     
 for x in d['urls']:
@@ -33,17 +32,24 @@ for x in d['urls']:
 	mybytes = fp.read()
 	mystr = mybytes.decode("utf8")
 	fp.close()
-	t = files(x);	
-	Cpath = "files/"+x
-	createFolder(Cpath)
-	ruta = ('files/'+x)
+	rutas = files(x);
+	print(rutas[0][1])
+	createFolder("files"+rutas[0][1])
+	#createFolder("files/test")
 	# print(ruta)
-	#f = open(ruta,'w+')
+	f = open("files"+rutas[0][1]+"/"+rutas[0][0],'w+')
 	#time.sleep(2)
-	#f.write(mystr)
-	#f.close()
-	
-	
+	f.write(mystr)
+	f.close()
+
+        
+def repositorio():
+    git_url = "emolina@192.168.5.222:F:/Sitiosftp/Home_SIT/home_citibanamex.git"
+    repo_dir = "git"
+    from git import Repo
+    Repo.clone_from(git_url, repo_dir)   
+
+repositorio();	
 # url = d['hostB']+d['urls'][0]
 # url2 = "https://www.banamex.com/firmaygana/index.html"
 # fp = urllib.request.urlopen(url2)
@@ -53,4 +59,5 @@ for x in d['urls']:
 # print(mystr)
 # f = open('files/t1.html','w+')
 # f.write(mystr)
+
 # f.close()
