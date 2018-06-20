@@ -44,7 +44,7 @@ for x in d['urls']:
 
         
 def repositorio():
-    git_url = "emolina@192.168.5.222:F:/Sitiosftp/Home_SIT/home_citibanamex.git"
+    git_url = "http://dev.difactor.in/Home_SIT/home_citibanamex.git"
     repo_dir = "git"
     from git import Repo
     Repo.clone_from(git_url, repo_dir)   
